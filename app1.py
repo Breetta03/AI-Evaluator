@@ -177,7 +177,8 @@ with st.sidebar:
 
 mode = st.session_state.mode
 # -------- API --------
-genai.configure(api_key="AIzaSyB_LvM-SRXgwVvP3I9h4Lc3lreoUkP5O4Y")
+import os
+genai.configure(api_key=os.getenv("API_KEY"))
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 # -------- FUNCTIONS --------
